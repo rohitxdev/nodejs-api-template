@@ -52,7 +52,7 @@
 		"fastify-bcrypt": "^1.0.1",
 		"handlebars": "^4.7.7",
 		"http-status": "^1.6.2",
-		"pino-pretty": "^10.0.0",
+		"pino-pretty": "^10.2.3",
 		"zod": "^3.21.4"
 	},
 	"devDependencies": {
