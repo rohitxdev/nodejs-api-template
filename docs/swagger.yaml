@@ -1,0 +1,95 @@
+swagger: "2.0"
+info:
+  title: Node.js App
+  version: 1.0.0
+  description: Node.js template
+definitions: {}
+paths:
+  /v1/auth/log-in:
+    post:
+      description: Log in to the application
+      tags:
+        - auth
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+              password:
+                type: string
+            required:
+              - username
+              - password
+      responses:
+        "200":
+          description: Default Response
+  /v1/auth/log-out:
+    post:
+      description: Log out of the application
+      tags:
+        - auth
+      responses:
+        "200":
+          description: Default Response
+  /v1/auth/sign-up:
+    post:
+      description: Create an account
+      tags:
+        - auth
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+              password:
+                type: string
+                minLength: 10
+                pattern: ^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$
+            required:
+              - username
+              - password
+      responses:
+        "200":
+          description: Default Response
+  /v1/auth/refresh-token:
+    post:
+      description: Refresh access token
+      tags:
+        - auth
+      responses:
+        "200":
+          description: Default Response
+  /v1/views:
+    get:
+      parameters:
+        - type: string
+          required: true
+          in: query
+          name: name
+      responses:
+        "200":
+          description: Default Response
+  /v1/:
+    get:
+      description: Home page
+      responses:
+        "200":
+          description: Default Response
+  /:
+    get:
+      description: Redirects to /v1
+      responses:
+        "307":
+          description: Temporary Redirect
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json

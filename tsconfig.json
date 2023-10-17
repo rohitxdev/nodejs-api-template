@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "strict": true,
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "target": "ES2018",
+        "esModuleInterop": true,
+        "removeComments": true,
+        "declaration": true,
+        "declarationDir": "./dist",
+        "preserveWatchOutput": false,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noImplicitReturns": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "noEmitOnError": true,
+        "incremental": true,
+        "outDir": "./dist",
+    },
+    "include": [
+        "src",
+    ],
+}
