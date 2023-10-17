@@ -17,7 +17,7 @@ import viewPlugin from '@fastify/view';
 import webSocketsPlugin from '@fastify/websocket';
 import chalk from 'chalk';
 import { fastify } from 'fastify';
-import { PinoLoggerOptions } from 'fastify/types/logger.js';
+import type { PinoLoggerOptions } from 'fastify/types/logger.js';
 import bcryptPlugin from 'fastify-bcrypt';
 import handlebars from 'handlebars';
 

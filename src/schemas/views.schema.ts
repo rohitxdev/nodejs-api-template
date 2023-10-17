@@ -1,4 +1,4 @@
-import { JSONSchema } from 'json-schema-typed';
+import { type JSONSchema } from 'json-schema-typed';
 export const viewsValidationSchema = {
 	rootQueryString: {
 		type: 'object',

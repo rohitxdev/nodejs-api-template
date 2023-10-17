@@ -1,7 +1,4 @@
-import { config } from 'dotenv';
 import { z } from 'zod';
-
-config();
 
 const envSchema = z
 	.object({
@@ -46,7 +43,7 @@ Object.entries(envVariables).forEach(([key, val]) => {
 
 if (undefinedList.length > 0) {
 	throw new Error(
-		`${undefinedList.join(', ')} ${undefinedList.length > 1 ? 'are' : 'is'} undefined`
+		`${undefinedList.join(', ')} ${undefinedList.length > 1 ? 'are' : 'is'} undefined`,
 	);
 }
 

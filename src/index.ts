@@ -38,7 +38,7 @@ const setUpCluster = async () => {
 
 	cluster.on('exit', async (worker) => {
 		console.log(
-			chalk.bold.red(`>> Worker ${worker.process.pid} died unexpectedly. Restarting in 5s...`)
+			chalk.bold.red(`>> Worker ${worker.process.pid} died unexpectedly. Restarting in 5s...`),
 		);
 		await setTimeout(5000);
 		const newWorker = cluster.fork();
@@ -51,28 +51,30 @@ const setUpCluster = async () => {
 			console.log(
 				chalk.bold.green(
 					`>> Server listening @ ${chalk.underline.bold.green(
-						(address as string).replace('0.0.0.0', '127.0.0.1')
-					)}\n`
-				)
+						(address as string).replace('0.0.0.0', '127.0.0.1'),
+					)}\n`,
+				),
 			);
 		}
 	});
 
 	console.log(
 		`\n${chalk.white.bold('<-- environment variables in')} ${chalk.bold.magenta(
-			env.NODE_ENV.toLocaleUpperCase()
-		)} ${chalk.white.bold('environment -->')}`
+			env.NODE_ENV.toLocaleUpperCase(),
+		)} ${chalk.white.bold('environment -->')}`,
 	);
 	console.table(
 		Object.entries(env).map(([key, value]) => ({
 			KEY: key,
 			VALUE: value,
-		}))
+		})),
 	);
 	console.log(
 		chalk.bold.white(
-			`>> Spun up ${intialWorkerPIDs.length} worker(s) with PID(s) - ${intialWorkerPIDs.join(', ')}`
-		)
+			`>> Spun up ${intialWorkerPIDs.length} worker(s) with PID(s) - ${intialWorkerPIDs.join(
+				', ',
+			)}`,
+		),
 	);
 };
 

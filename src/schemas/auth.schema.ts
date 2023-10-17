@@ -1,4 +1,4 @@
-import { JSONSchema } from 'json-schema-typed';
+import { type JSONSchema } from 'json-schema-typed';
 
 /**
  * @description Password must contain at least one letter, one digit, one special character, and a minimum length of 10 characters

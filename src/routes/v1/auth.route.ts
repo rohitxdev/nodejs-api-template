@@ -1,5 +1,5 @@
-import { JsonSchemaToTsProvider } from '@fastify/type-provider-json-schema-to-ts';
-import { FastifyPluginAsync } from 'fastify';
+import { type JsonSchemaToTsProvider } from '@fastify/type-provider-json-schema-to-ts';
+import { type FastifyPluginAsync } from 'fastify';
 
 import { roles } from '../../constants/roles.js';
 import { auth } from '../../middleware/auth.js';

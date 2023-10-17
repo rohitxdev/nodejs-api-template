@@ -1,4 +1,4 @@
-import { FastifyPluginAsync } from 'fastify';
+import { type FastifyPluginAsync } from 'fastify';
 import httpStatus from 'http-status';
 
 import { env } from '../constants/env.js';

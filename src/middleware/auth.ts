@@ -1,9 +1,9 @@
-import { preHandlerAsyncHookHandler } from 'fastify';
+import { type preHandlerAsyncHookHandler } from 'fastify';
 import httpStatus from 'http-status';
 
 import { roles } from '../constants/roles.js';
 import { getUserFromId } from '../services/auth.service.js';
-import { UserRole } from '../types/user.js';
+import { type UserRole } from '../types/user.js';
 
 export const auth = (requiredUserRole: UserRole) => {
 	const fn: preHandlerAsyncHookHandler = async (request, reply) => {

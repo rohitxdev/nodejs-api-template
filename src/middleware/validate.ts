@@ -1,6 +1,6 @@
-import { preHandlerAsyncHookHandler } from 'fastify';
+import { type preHandlerAsyncHookHandler } from 'fastify';
 import httpStatus from 'http-status';
-import { AnyZodObject, ZodError } from 'zod';
+import { type AnyZodObject, ZodError } from 'zod';
 
 export const validate = (schema: AnyZodObject) => {
 	const fn: preHandlerAsyncHookHandler = async (request, reply) => {
