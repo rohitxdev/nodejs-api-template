@@ -4,13 +4,13 @@ WORKDIR /app
 
 COPY package.json .
 
-COPY yarn.lock .
+COPY pnpm-lock.yaml .
 
-RUN yarn
+RUN pnpm install
 
 COPY . .
 
-RUN yarn build
+RUN pnpm build
 
 EXPOSE 443
 
