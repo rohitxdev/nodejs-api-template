@@ -4,12 +4,12 @@ const envSchema = z
 	.object({
 		NODE_ENV: z.union([z.literal('development'), z.literal('production')]),
 		LOGS_ENABLED: z.union([z.literal('true'), z.literal('false')]),
-		MAX_INSTANCES: z.string().nonempty(),
-		MAX_REQUESTS_PER_MINUTE: z.string().nonempty(),
-		HOST: z.string().nonempty().ip(),
-		PORT: z.string().nonempty(),
-		TLS_CERT_PATH: z.string().nonempty(),
-		TLS_KEY_PATH: z.string().nonempty(),
+		MAX_INSTANCES: z.string().min(1),
+		MAX_REQUESTS_PER_MINUTE: z.string().min(1),
+		HOST: z.string().min(1).ip(),
+		PORT: z.string().min(1),
+		TLS_CERT_PATH: z.string().min(1),
+		TLS_KEY_PATH: z.string().min(1),
 		JWT_SECRET: z.string().min(32),
 	})
 	.transform((val) => ({
